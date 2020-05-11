@@ -6,4 +6,3 @@ built using maven, spring for managing beans
 Next to fix/add:
 1) Edit homepage(add project description or sth else)
 2) Fix error with non-existing email
-3) Change the way deletion works
