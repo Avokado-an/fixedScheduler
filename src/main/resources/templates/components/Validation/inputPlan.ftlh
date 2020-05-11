@@ -5,6 +5,8 @@
     <@validator.input "${submitName}">
         <div class="form-row">
             <@input.input "description", "${description}", "text", "Please provide a valid description."/>
+        </div>
+        <div class="form-row">
             <div class="col-md-6 mb-3">
                 <label for="date">Date</label>
                 <input type="date" name="deadlineDate" min="${minDate}" max="2045-12-12" value="${date}" id="date"

@@ -44,36 +44,6 @@ public class TasksListController {
         return "tasks";
     }
 
-    @PostMapping()
-    public String deletePlan(
-            @AuthenticationPrincipal User user,
-            @RequestParam(name = "planId") String planId,
-            Model model
-    ) {
-        int id = Integer.parseInt(planId);
-        planServiceImplementation.deletePlan(id);
-        user.deletePlanById(id);
-
-        themesAndPlansGetter.getPlansAndThemes(user, model, null);
-
-        return "tasks";
-    }
-
-    /*@PostMapping()
-    public String deleteTheme(
-            @AuthenticationPrincipal User user,
-            @RequestParam(name = "themeId") String themeId,
-            Model model
-    ) {
-        int id = Integer.parseInt(themeId);
-        themeServiceImplementation.deleteThemeById(id);
-        user.deleteThemeById(id);
-
-        themesAndPlansGetter.getPlansAndThemes(user, model, null);
-
-        return "tasks";
-    }*/
-
     @GetMapping("/{themeId}")
     public String showPlans(
             @AuthenticationPrincipal User user,
@@ -83,32 +53,4 @@ public class TasksListController {
         themesAndPlansGetter.getPlansAndThemes(user, model, themeServiceImplementation.getById(Integer.parseInt(themeId)));
         return "tasks";
     }
-
-    @PostMapping("/{themeId}")
-    public String deletePlan(
-            @AuthenticationPrincipal User user,
-            @RequestParam(name = "planId") String planId,
-            Model model,
-            @PathVariable String themeId
-    ) {
-        planServiceImplementation.deletePlan(Integer.parseInt(planId));
-
-        themesAndPlansGetter.getPlansAndThemes(user, model, themeServiceImplementation.getById(Integer.parseInt(themeId)));
-
-        return "tasks";
-    }
-
-    /*@PostMapping("/{parentThemeId}")
-    public String deleteTheme(
-            @AuthenticationPrincipal User user,
-            @RequestParam(name = "themeId") String themeId,
-            Model model,
-            @PathVariable String parentThemeId
-    ) {
-        themeServiceImplementation.deleteThemeById(Integer.parseInt(themeId));
-
-        themesAndPlansGetter.getPlansAndThemes(user, model,  themeServiceImplementation.getById(Integer.parseInt(parentThemeId)));
-
-        return "redirect:/tasks";
-    }*/
 }

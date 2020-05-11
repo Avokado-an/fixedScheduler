@@ -20,10 +20,9 @@ public class Theme implements Comparable<Theme>{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @NotBlank(message = "Input the description of the theme")
     String name;
 
-    @OneToMany(mappedBy = "theme")
+    @OneToMany(mappedBy = "theme", orphanRemoval = true)
     private List<Plan> plans = new ArrayList<>();
 
     @ManyToOne
@@ -31,7 +30,7 @@ public class Theme implements Comparable<Theme>{
     @JoinColumn(name = "owner")
     private User user;
 
-    @ManyToOne(cascade={CascadeType.ALL})
+    @ManyToOne
     @LazyCollection(LazyCollectionOption.FALSE)
     @JoinColumn(name="parent")
     private Theme parentTheme;

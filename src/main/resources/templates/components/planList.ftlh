@@ -11,18 +11,11 @@
         <div class="card">
             <div class="card-header">
                 Plan
-                <form method="post" enctype="multipart/form-data">
-                    <a href="/tasks/<#nested>editPlan/${plan.id}"
-                       class="btn btn-primary">Edit</a>
-                    <button type="submit" class="btn btn-primary">Delete</button>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                <input type="hidden" name="planId" placeholder="new task" value="${plan.id}"/>
-                            </div>
-                        </div>
-                    </div>
+                <a href="/tasks/<#nested>editPlan/${plan.id}"
+                   class="btn btn-primary">Edit</a>
+                <form method="post" action="/tasks/<#nested>deletePlan/${plan.id}">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                    <button type="submit">Delete</button>
                 </form>
             </div>
             <div class="card-body">
