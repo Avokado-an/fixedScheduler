@@ -11,8 +11,12 @@
         <div class="card">
             <div class="card-header">
                 Theme
-                    <a href="/tasks/<#nested>editTheme/${theme.id}"
-                       class="btn btn-primary">Edit</a>
+                <a href="/tasks/<#nested>editTheme/${theme.id}"
+                   class="btn btn-primary">Edit</a>
+                <form method="post" action="/tasks/<#nested>deleteTheme/${theme.id}">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                    <button type="submit">Delete</button>
+                </form>
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
