@@ -1,5 +1,5 @@
 # fixedScheduler
-Basic organizer where you can add plans with description and date, create themes for plans and inner themes, edit your plans and themes. 
+Basic organizer where you can add plans (their description and date before which it should be finished), create themes(their description) for plans and inner themes, edit your plans and themes. 
 Registration goes via spring security with google messages for account confirmation and password restoration. User input is validated.
 Information is saved using Hibernate, design - freemarker + bootstrap, user validation - spring security + google messages, lombok for entitie classes
 built using maven, spring for managing beans
