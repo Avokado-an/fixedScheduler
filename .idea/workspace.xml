@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fce1f4ef-af45-4252-bc6f-f8e9e9357f9a" name="Default Changelist" comment="Fixed deletion">
+    <list default="true" id="fce1f4ef-af45-4252-bc6f-f8e9e9357f9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/FreemarkerTagLibsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/FreemarkerTagLibsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/MVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/MVCConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/MailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/MailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/ThemesAndPlansGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/ThemesAndPlansGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/FreemarkerTagLibsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/FreemarkerTagLibsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/MVCConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/MVCConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/MailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/MailConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/MailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/MailSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/ThemesAndPlansGetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/ThemesAndPlansGetter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +157,8 @@
       <workItem from="1588928722158" duration="3493000" />
       <workItem from="1589025911604" duration="297000" />
       <workItem from="1589026236986" duration="2438000" />
-      <workItem from="1589194355957" duration="6704000" />
+      <workItem from="1589194355957" duration="7057000" />
+      <workItem from="1589659392484" duration="1431000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deletion">
       <created>1589201101595</created>
@@ -170,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589201218671</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed deletion">
+      <created>1589201495447</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589201495447</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +199,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -228,10 +248,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="883" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588508345997" />
-    <state x="777" y="16" key="CommitChangelistDialog2" timestamp="1589201283632">
+    <state x="777" y="16" key="CommitChangelistDialog2" timestamp="1589201494236">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="777" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589201283632" />
+    <state x="777" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589201494236" />
     <state x="294" y="79" key="DiffContextDialog" timestamp="1589195264435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -240,38 +260,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588601655865" />
-    <state width="1493" height="180" key="GridCell.Tab.0.bottom" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom" timestamp="1589201636591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
-    <state width="1493" height="180" key="GridCell.Tab.0.center" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589201636591" />
+    <state width="1493" height="180" key="GridCell.Tab.0.center" timestamp="1589201636590">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
-    <state width="1493" height="180" key="GridCell.Tab.0.left" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589201636590" />
+    <state width="1493" height="180" key="GridCell.Tab.0.left" timestamp="1589201636590">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
-    <state width="1493" height="180" key="GridCell.Tab.0.right" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589201636590" />
+    <state width="1493" height="180" key="GridCell.Tab.0.right" timestamp="1589201636591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
-    <state width="1493" height="180" key="GridCell.Tab.1.bottom" timestamp="1589201062886">
+    <state width="1493" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589201636591" />
+    <state width="1493" height="180" key="GridCell.Tab.1.bottom" timestamp="1589201636591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589201062886" />
-    <state width="1493" height="180" key="GridCell.Tab.1.center" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589201636591" />
+    <state width="1493" height="180" key="GridCell.Tab.1.center" timestamp="1589201636591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
-    <state width="1493" height="180" key="GridCell.Tab.1.left" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589201636591" />
+    <state width="1493" height="180" key="GridCell.Tab.1.left" timestamp="1589201636591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
-    <state width="1493" height="180" key="GridCell.Tab.1.right" timestamp="1589201062885">
+    <state width="1493" height="180" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589201636591" />
+    <state width="1493" height="180" key="GridCell.Tab.1.right" timestamp="1589201636591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589201062885" />
+    <state width="1493" height="180" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589201636591" />
     <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1586458844253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -300,14 +320,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="376" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589026211147" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1589194355449">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1589659417276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589194355449" />
-    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589201464607">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589659417276" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589201610821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589201464607" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589201610821" />
     <state x="330" y="149" width="876" height="601" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586970136289">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

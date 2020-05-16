@@ -7,6 +7,7 @@ import javafx.collections.transformation.SortedList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.ArrayList;
@@ -14,13 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-@Configuration
 public class ThemesAndPlansGetter {
-    @Bean
-    public ThemesAndPlansGetter getThemesAndPlansGetter() {
-        return new ThemesAndPlansGetter();
-    }
-
     public void getPlansAndThemes(User user, Model model, Theme theme) {
         Set<Plan> plans;
         Set<Theme> themes;

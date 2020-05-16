@@ -34,4 +34,9 @@ public class MailConfig {
 
         return mailSender;
     }
+
+    @Bean
+    public MailSender getMailSender() {
+        return new MailSender();
+    }
 }
