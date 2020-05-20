@@ -1,4 +1,5 @@
 <#import "components/basic.ftlh" as base>
+<#import "components/Validation/inputValidator.ftlh" as validator>
 <#import  "components/Validation/inputSingleElement.ftlh" as validate>
 
 <@base.page>
@@ -9,8 +10,10 @@
     <div class="container">
 
         <form method="post" enctype="multipart/form-data">
-            <@validate.input "activationCode", "", "activationCode", "activationCode", "text", "Provide activation code"/>
-            <div class="container">
+            <@validator.input "Confirm">
+                <@validate.input "activationCode", "", "text", "Provide activation code"/>
+            </@validator.input>
+            <!--<div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
@@ -18,7 +21,7 @@
                     </div>
                 </div>
                 <button type="submit">Confirm</button>
-            </div>
+            </div>-->
         </form>
     </div>
 </@base.page>

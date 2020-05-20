@@ -13,9 +13,9 @@
                 Plan
                 <a href="/tasks/<#nested>editPlan/${plan.id}"
                    class="btn btn-primary">Edit</a>
-                <form method="post" action="/tasks/<#nested>deletePlan/${plan.id}">
+                <form method="post" action="/tasks/<#nested>deletePlan/${plan.id}" style="display: inline-block">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                    <button type="submit">Delete</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
                 </form>
             </div>
             <div class="card-body">

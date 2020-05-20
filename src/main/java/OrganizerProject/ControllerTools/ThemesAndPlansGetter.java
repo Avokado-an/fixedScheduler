@@ -3,11 +3,6 @@ package OrganizerProject.ControllerTools;
 import OrganizerProject.Entities.Plan;
 import OrganizerProject.Entities.Theme;
 import OrganizerProject.Entities.User;
-import javafx.collections.transformation.SortedList;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.ArrayList;

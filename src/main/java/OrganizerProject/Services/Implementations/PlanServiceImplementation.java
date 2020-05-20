@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class PlanServiceImplementation implements PlanService {
     private PlanRepository repository;
@@ -22,6 +23,7 @@ public class PlanServiceImplementation implements PlanService {
     public void save(Plan plan) {
         repository.save(plan);
     }
+
 
     @Override
     public List<Plan> findByOwner(User owner) {

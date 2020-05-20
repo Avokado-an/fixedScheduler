@@ -3,7 +3,7 @@
     <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <#nested>
-        <button type="submit">${submitName}</button>
+        <button type="submit" class="btn btn-primary">${submitName}</button>
     </form>
 
     <script>

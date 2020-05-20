@@ -49,8 +49,7 @@ public class PlanAdderController {
             @AuthenticationPrincipal User user,
             Model model
     ) {
-        model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
-        themesAndPlansGetter.getPlansAndThemes(user, model, null);
+        inputModelData(user, model, null);
         return "addPlan";
     }
 
@@ -62,13 +61,9 @@ public class PlanAdderController {
             @RequestParam(name = "deadlineTime") String timeString,
             Model model
     ) throws ParseException {
-        Plan plan = createPlan(user, description, timeString, dateString);
-        user.addPlan(plan);
+        addPlanComponent(user, description, dateString, timeString, null);
 
-        planServiceImplementation.save(plan);
-
-        themesAndPlansGetter.getPlansAndThemes(user, model, null);
-        model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
+        inputModelData(user, model, null);
         return "redirect:/tasks";
     }
 
@@ -78,8 +73,7 @@ public class PlanAdderController {
             Model model,
             @PathVariable String themeId
     ) {
-        themesAndPlansGetter.getPlansAndThemes(user, model, themeServiceImplementation.getById(Integer.parseInt(themeId)));
-        model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
+        inputModelData(user, model, themeServiceImplementation.getById(Integer.parseInt(themeId)));
         return "addPlan";
     }
 
@@ -92,25 +86,35 @@ public class PlanAdderController {
             Model model,
             @PathVariable String themeId
     ) throws ParseException {
-        Plan plan = createPlan(user, description, timeString, dateString);
-
         Theme theme = themeServiceImplementation.getById(Integer.parseInt(themeId));
-        plan.setTheme(theme);
-        theme.addPlan(plan);
-        user.addPlan(plan);
+        addPlanComponent(user, description, dateString, timeString, theme);
 
-        planServiceImplementation.save(plan);
-
-        themesAndPlansGetter.getPlansAndThemes(user, model, theme);
-        model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
-
+        inputModelData(user, model, theme);
         return new ModelAndView("redirect:/tasks/" + themeId);
     }
+
+
 
     private Plan createPlan(User user, String description, String timeString, String dateString) throws ParseException {
         Date time = new SimpleDateFormat("kk:mm").parse(timeString);
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
 
         return new Plan(description, time, date, user);
+    }
+
+    private void addPlanComponent(User user, String description, String dateString, String timeString, Theme theme) throws ParseException {
+        Plan plan = createPlan(user, description, timeString, dateString);
+
+        if (theme != null)
+            theme.addPlan(plan);
+        plan.setTheme(theme);
+        user.addPlan(plan);
+
+        planServiceImplementation.save(plan);
+    }
+
+    private void inputModelData(User user, Model model, Theme theme) {
+        themesAndPlansGetter.getPlansAndThemes(user, model, theme);
+        model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
     }
 }

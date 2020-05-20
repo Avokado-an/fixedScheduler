@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collections;
@@ -54,24 +51,35 @@ public class RegistrationController {
             @RequestParam(name = "email") String email,
             Model model
     ) {
-        User newUser = new User();
-        newUser.setName(name);
-        User DbUser = userServiceImplementation.loadUserByUsername(name);
+        try {
+            User newUser = new User();
+            newUser.setName(name);
+            User DbUser = userServiceImplementation.loadUserByUsername(name);
 
-        if (DbUser != null) {
-            model.addAttribute("message", "This username is taken, try another");
+            if (DbUser != null) {
+                model.addAttribute("message", "This username is taken, try another");
+                return new ModelAndView("registration");
+            }
+
+            newUser.setPassword(passwordEncoder.encode(password));
+            newUser.setEmail(email);
+            newUser.setActivationCode(UUID.randomUUID().toString().substring(0, 4));
+            newUser.setActive(false);
+            newUser.setRoles(Collections.singleton(Roles.USER));
+
+            String message =  "Hello, Your activation code - " + newUser.getActivationCode();
+            mailSender.send(email, "Activation code", message);
+
+            userServiceImplementation.save(newUser);
+            return new ModelAndView("redirect:/activation/" + name);
+        } catch (Exception ex) {
+            model.addAttribute("message", "This mail is invalid, check it");
             return new ModelAndView("registration");
         }
+    }
 
-        newUser.setPassword(passwordEncoder.encode(password));
-        newUser.setEmail(email);
-        newUser.setActivationCode(UUID.randomUUID().toString().substring(0, 4));
-        newUser.setActive(false);
-        newUser.setRoles(Collections.singleton(Roles.USER));
-        userServiceImplementation.save(newUser);
-
-        String message =  "Hello, Your activation code - " + newUser.getActivationCode();
-        mailSender.send(email, "Activation code", message);
-        return new ModelAndView("redirect:/activation/" + name);
+    @ExceptionHandler(javax.mail.SendFailedException.class)
+    public ModelAndView handleException(Exception ex) {
+        return new ModelAndView("redirect:/tasks/registration");
     }
 }
