@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class FreemarkerTagLibsConfig {
     @Bean
     @ConditionalOnMissingBean(ClassPathTldsLoader.class)
-    public ClassPathTldsLoader classPathTldsLoader(){
+    public ClassPathTldsLoader classPathTldsLoader() {
         return new ClassPathTldsLoader();
     }
 }

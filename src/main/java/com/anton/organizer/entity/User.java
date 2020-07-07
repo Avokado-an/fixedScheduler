@@ -10,7 +10,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -59,14 +62,15 @@ public class User implements UserDetails {
     }
 
     public void editTheme(int id, Theme editedTheme) {
-        for(Theme theme: themes) {
-            if(theme.getId() == id)
+        for (Theme theme : themes) {
+            if (theme.getId() == id)
                 theme.setName(editedTheme.getName());
         }
     }
+
     public void editPlan(int id, Plan editedPlan) {
-        for(Plan plan: plans) {
-            if(plan.getId() == id) {
+        for (Plan plan : plans) {
+            if (plan.getId() == id) {
                 plan.setDate(editedPlan.getDate());
                 plan.setTime(editedPlan.getTime());
                 plan.setDescription(editedPlan.getDescription());

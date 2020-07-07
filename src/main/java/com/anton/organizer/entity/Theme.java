@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "Theme")
-public class Theme implements Comparable<Theme>{
+public class Theme implements Comparable<Theme> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -21,6 +21,7 @@ public class Theme implements Comparable<Theme>{
     String name;
 
     @OneToMany(mappedBy = "theme", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Plan> plans = new ArrayList<>();
 
     @ManyToOne
@@ -30,10 +31,11 @@ public class Theme implements Comparable<Theme>{
 
     @ManyToOne
     @LazyCollection(LazyCollectionOption.FALSE)
-    @JoinColumn(name="parent")
+    @JoinColumn(name = "parent")
     private Theme parentTheme;
 
-    @OneToMany(mappedBy="parentTheme", orphanRemoval = true)
+    @OneToMany(mappedBy = "parentTheme", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Theme> childThemes;
 
     public Theme(String name, User user) {

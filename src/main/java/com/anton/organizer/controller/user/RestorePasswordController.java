@@ -1,8 +1,8 @@
 package com.anton.organizer.controller.user;
 
-import com.anton.organizer.service.MailSender;
-import com.anton.organizer.entity.User;
 import com.anton.organizer.dao.implementation.UserDaoImplementation;
+import com.anton.organizer.entity.User;
+import com.anton.organizer.service.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,11 +16,11 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/restorePassword")
 public class RestorePasswordController {
-    private UserDaoImplementation userServiceImplementation;
+    private UserDaoImplementation userDaoImplementation;
 
     @Autowired
-    public void setUserServiceImplementation(UserDaoImplementation userServiceImplementation) {
-        this.userServiceImplementation = userServiceImplementation;
+    public void setUserDaoImplementation(UserDaoImplementation userDaoImplementation) {
+        this.userDaoImplementation = userDaoImplementation;
     }
 
     private PasswordEncoder passwordEncoder;
@@ -30,11 +30,11 @@ public class RestorePasswordController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    MailSender mailSender = new MailSender();
+    MailSenderService mailSenderService = new MailSenderService();
 
     @Autowired
-    public void setMailSender(MailSender mailSender) {
-        this.mailSender = mailSender;
+    public void setMailSenderService(MailSenderService mailSenderService) {
+        this.mailSenderService = mailSenderService;
     }
 
     @GetMapping
@@ -47,9 +47,9 @@ public class RestorePasswordController {
     public ModelAndView restorePassword(
             @RequestParam String username
     ) {
-        User user = userServiceImplementation.loadUserByUsername(username);
+        User user = userDaoImplementation.loadUserByUsername(username);
         String code = UUID.randomUUID().toString().substring(0, 4);
-        mailSender.send(user.getEmail(), "Restore password", "Your code to change password - " + code);
+        mailSenderService.send(user.getEmail(), "Restore password", "Your code to change password - " + code);
         user.setActivationCode(code);
         return new ModelAndView("redirect:/restorePassword/" + username);
     }
@@ -65,8 +65,8 @@ public class RestorePasswordController {
             @RequestParam String activationCode,
             Model model
     ) {
-        User user = userServiceImplementation.loadUserByUsername(username);
-        if(activationCode.equals(user.getActivationCode()))
+        User user = userDaoImplementation.loadUserByUsername(username);
+        if (activationCode.equals(user.getActivationCode()))
             return new ModelAndView("redirect:/restorePassword/changePassword/" + username);
         else {
             model.addAttribute("message", "wrong code");
@@ -87,8 +87,8 @@ public class RestorePasswordController {
             @RequestParam String passwordChecker,
             Model model
     ) {
-        if(passwordChecker.equals(password)){
-            User user = userServiceImplementation.loadUserByUsername(username);
+        if (passwordChecker.equals(password)) {
+            User user = userDaoImplementation.loadUserByUsername(username);
             user.setPassword(passwordEncoder.encode(password));
             return new ModelAndView("redirect:/login");
         }

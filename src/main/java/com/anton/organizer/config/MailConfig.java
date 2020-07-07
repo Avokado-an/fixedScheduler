@@ -1,6 +1,6 @@
 package com.anton.organizer.config;
 
-import com.anton.organizer.service.MailSender;
+import com.anton.organizer.service.MailSenderService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,8 +35,8 @@ public class MailConfig {
         return mailSender;
     }
 
-    @Bean
-    public MailSender getMailSender() {
-        return new MailSender();
-    }
+    //@Bean
+    //public MailSenderService getMailSender() {
+        //return new MailSenderService();
+    //}
 }

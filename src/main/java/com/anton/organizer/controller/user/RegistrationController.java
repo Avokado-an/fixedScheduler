@@ -1,9 +1,9 @@
 package com.anton.organizer.controller.user;
 
-import com.anton.organizer.service.MailSender;
+import com.anton.organizer.dao.implementation.UserDaoImplementation;
 import com.anton.organizer.entity.Roles;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.dao.implementation.UserDaoImplementation;
+import com.anton.organizer.service.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -18,18 +18,18 @@ import java.util.UUID;
 @RequestMapping("/registration")
 public class RegistrationController {
     private static final String REGISTRATION = "registration";
-    private UserDaoImplementation userServiceImplementation;
+    private UserDaoImplementation userDaoImplementation;
 
     @Autowired
-    public void setUserServiceImplementation(UserDaoImplementation userServiceImplementation) {
-        this.userServiceImplementation = userServiceImplementation;
+    public void setUserDaoImplementation(UserDaoImplementation userDaoImplementation) {
+        this.userDaoImplementation = userDaoImplementation;
     }
 
-    private MailSender mailSender;
+    private MailSenderService mailSenderService;
 
     @Autowired
-    public void setMailSender(MailSender mailSender) {
-        this.mailSender = mailSender;
+    public void setMailSenderService(MailSenderService mailSenderService) {
+        this.mailSenderService = mailSenderService;
     }
 
     private PasswordEncoder passwordEncoder;
@@ -38,7 +38,6 @@ public class RegistrationController {
     public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }
-
 
     @GetMapping
     public String register() {
@@ -55,7 +54,7 @@ public class RegistrationController {
         try {
             User newUser = new User();
             newUser.setName(name);
-            User dbUser = userServiceImplementation.loadUserByUsername(name);
+            User dbUser = userDaoImplementation.loadUserByUsername(name);
 
             if (dbUser != null) {
                 model.addAttribute("message", "This username is taken, try another");
@@ -68,10 +67,10 @@ public class RegistrationController {
             newUser.setActive(false);
             newUser.setRoles(Collections.singleton(Roles.USER));
 
-            String message =  "Hello, Your activation code - " + newUser.getActivationCode();
-            mailSender.send(email, "Activation code", message);
+            String message = "Hello, Your activation code - " + newUser.getActivationCode();
+            mailSenderService.send(email, "Activation code", message);
 
-            userServiceImplementation.save(newUser);
+            userDaoImplementation.save(newUser);
             return new ModelAndView("redirect:/activation/" + name);
         } catch (Exception ex) {
             model.addAttribute("message", "This mail is invalid, check it");

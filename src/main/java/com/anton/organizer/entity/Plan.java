@@ -10,7 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "Plan")
-public class Plan implements Comparable<Plan>{
+public class Plan implements Comparable<Plan> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

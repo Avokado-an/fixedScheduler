@@ -8,7 +8,6 @@ import static freemarker.template.utility.Collections12.singletonList;
 
 @SpringBootApplication
 public class ServingWebContentApplication {
-
     public ServingWebContentApplication(FreeMarkerConfigurer freeMarkerConfigurer) {
         freeMarkerConfigurer.getTaglibFactory().setClasspathTlds(singletonList("classpath:/META-INF/security.tld"));
     }

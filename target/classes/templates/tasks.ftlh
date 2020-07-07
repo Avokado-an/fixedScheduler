@@ -11,7 +11,6 @@
     </#if>
 
     <div class="container">
-
         <#if currentTheme??>
             <@themeList.themesWithParent themes, currentTheme/>
             <@planList.plansWithParent plans, currentTheme/>

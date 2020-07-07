@@ -7,7 +7,10 @@ import java.util.List;
 
 public interface ThemeDao {
     void save(Theme theme);
+
     List<Theme> getByOwner(User owner);
+
     Theme getById(int id);
+
     void deleteThemeById(int id);
 }

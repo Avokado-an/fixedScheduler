@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ThemeRepository extends JpaRepository<Theme, Long> {
     List<Theme> getByUser(User owner);
+
     Theme getById(int id);
+
     void deleteById(int id);
 }

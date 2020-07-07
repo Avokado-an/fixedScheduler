@@ -1,7 +1,7 @@
 package com.anton.organizer.controller.user;
 
-import com.anton.organizer.entity.User;
 import com.anton.organizer.dao.implementation.UserDaoImplementation;
+import com.anton.organizer.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +12,11 @@ import javax.transaction.Transactional;
 @Controller
 @RequestMapping("/activation/{username}")
 public class ActivationController {
-    private UserDaoImplementation userServiceImplementation;
+    private UserDaoImplementation userDaoImplementation;
 
     @Autowired
-    public void setUserServiceImplementation(UserDaoImplementation userServiceImplementation) {
-        this.userServiceImplementation = userServiceImplementation;
+    public void setUserDaoImplementation(UserDaoImplementation userDaoImplementation) {
+        this.userDaoImplementation = userDaoImplementation;
     }
 
     @GetMapping
@@ -30,7 +30,7 @@ public class ActivationController {
             @PathVariable String username,
             @RequestParam(name = "activationCode") String activationCode
     ) {
-        User user = userServiceImplementation.loadUserByUsername(username);
+        User user = userDaoImplementation.loadUserByUsername(username);
         if (activationCode.equals(user.getActivationCode())) {
             user.setActive(true);
             return new ModelAndView("redirect:/login");

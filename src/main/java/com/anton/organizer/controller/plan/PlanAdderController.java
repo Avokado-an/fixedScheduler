@@ -1,11 +1,11 @@
 package com.anton.organizer.controller.plan;
 
-import com.anton.organizer.service.ThemesAndPlansGetter;
+import com.anton.organizer.dao.implementation.planDaoImplementation;
+import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
 import com.anton.organizer.entity.Plan;
 import com.anton.organizer.entity.Theme;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.dao.implementation.PlanDaoImplementation;
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
+import com.anton.organizer.service.ThemesAndPlansService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -22,26 +22,25 @@ import java.util.Date;
 @Controller
 @RequestMapping
 public class PlanAdderController {
-
-    private ThemesAndPlansGetter themesAndPlansGetter;
+    private ThemesAndPlansService themesAndPlansService;
 
     @Autowired
-    public void setThemesAndPlansGetter(ThemesAndPlansGetter themesAndPlansGetter) {
-        this.themesAndPlansGetter = themesAndPlansGetter;
+    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
+        this.themesAndPlansService = themesAndPlansService;
     }
 
-    private ThemeDaoImplementation themeServiceImplementation;
+    private ThemeDaoImplementation themeDaoImplementation;
 
     @Autowired
-    public void setThemeServiceImplementation(ThemeDaoImplementation themeServiceImplementation) {
-        this.themeServiceImplementation = themeServiceImplementation;
+    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
+        this.themeDaoImplementation = themeDaoImplementation;
     }
 
-    private PlanDaoImplementation planServiceImplementation;
+    private planDaoImplementation planDaoImplementation;
 
     @Autowired
-    public void setPlanServiceImplementation(PlanDaoImplementation planServiceImplementation) {
-        this.planServiceImplementation = planServiceImplementation;
+    public void setPlanServiceImplementation(planDaoImplementation planDaoImplementation) {
+        this.planDaoImplementation = planDaoImplementation;
     }
 
     @GetMapping("/tasks/addPlan")
@@ -73,7 +72,7 @@ public class PlanAdderController {
             Model model,
             @PathVariable String themeId
     ) {
-        inputModelData(user, model, themeServiceImplementation.getById(Integer.parseInt(themeId)));
+        inputModelData(user, model, themeDaoImplementation.getById(Integer.parseInt(themeId)));
         return "addPlan";
     }
 
@@ -86,13 +85,12 @@ public class PlanAdderController {
             Model model,
             @PathVariable String themeId
     ) throws ParseException {
-        Theme theme = themeServiceImplementation.getById(Integer.parseInt(themeId));
+        Theme theme = themeDaoImplementation.getById(Integer.parseInt(themeId));
         addPlanComponent(user, description, dateString, timeString, theme);
 
         inputModelData(user, model, theme);
         return new ModelAndView("redirect:/tasks/" + themeId);
     }
-
 
 
     private Plan createPlan(User user, String description, String timeString, String dateString) throws ParseException {
@@ -111,11 +109,11 @@ public class PlanAdderController {
         plan.setTheme(theme);
         user.addPlan(plan);
 
-        planServiceImplementation.save(plan);
+        planDaoImplementation.save(plan);
     }
 
     private void inputModelData(User user, Model model, Theme theme) {
-        themesAndPlansGetter.getPlansAndThemes(user, model, theme);
+        themesAndPlansService.findPlansAndThemes(user, model, theme);
         model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
     }
 }

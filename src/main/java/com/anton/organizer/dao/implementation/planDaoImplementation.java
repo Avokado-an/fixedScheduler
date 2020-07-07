@@ -1,9 +1,9 @@
 package com.anton.organizer.dao.implementation;
 
+import com.anton.organizer.dao.PlanDao;
 import com.anton.organizer.entity.Plan;
 import com.anton.organizer.entity.User;
 import com.anton.organizer.repository.PlanRepository;
-import com.anton.organizer.dao.PlanDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service
-public class PlanDaoImplementation implements PlanDao {
+public class planDaoImplementation implements PlanDao {
     private PlanRepository repository;
 
     @Autowired
