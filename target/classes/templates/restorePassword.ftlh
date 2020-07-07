@@ -1,4 +1,4 @@
-<#import "components/basic.ftlh" as base>
+<#import "component/basic.ftlh" as base>
 
 <@base.page>
     <nav class="nav">

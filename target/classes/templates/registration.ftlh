@@ -1,5 +1,5 @@
-<#import "components/basic.ftlh" as c>
-<#import "components/logHelper.ftlh" as l>
+<#import "component/basic.ftlh" as c>
+<#import "component/logHelper.ftlh" as l>
 
 <@c.page>
     <nav class="nav">

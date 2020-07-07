@@ -1,5 +1,5 @@
-<#import "components/basic.ftlh" as base>
-<#import "components/Validation/inputTheme.ftlh" as inputTheme>
+<#import "component/basic.ftlh" as base>
+<#import "component/Validation/inputTheme.ftlh" as inputTheme>
 
 <@base.page>
     <div class="container">

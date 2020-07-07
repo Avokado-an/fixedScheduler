@@ -1,6 +1,6 @@
 <#ftl output_format="HTML"/>
-<#import "components/basic.ftlh" as base>
-<#import "components/logHelper.ftlh" as log>
+<#import "component/basic.ftlh" as base>
+<#import "component/logHelper.ftlh" as log>
 <#assign sec=JspTaglibs["http://www.springframework.org/security/tags"]/>
 
 <@base.page>

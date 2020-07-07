@@ -1,5 +1,5 @@
-<#import "components/basic.ftlh" as base>
-<#import "components/Validation/inputPlan.ftlh" as planInputter>
+<#import "component/basic.ftlh" as base>
+<#import "component/Validation/inputPlan.ftlh" as planInputter>
 
 <@base.page>
     <div class="container">

@@ -1,6 +1,6 @@
-<#import "components/basic.ftlh" as base>
-<#import "components/Validation/inputValidator.ftlh" as validator>
-<#import  "components/Validation/inputSingleElement.ftlh" as validate>
+<#import "component/basic.ftlh" as base>
+<#import "component/Validation/inputValidator.ftlh" as validator>
+<#import  "component/Validation/inputSingleElement.ftlh" as validate>
 
 <@base.page>
     <nav class="nav">

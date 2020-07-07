@@ -2,35 +2,117 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce1f4ef-af45-4252-bc6f-f8e9e9357f9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Exceptions/nonExistingEmailExceptions.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/ControllerErrors.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/ThemesAndPlansGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/ThemesAndPlansGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/PlansRelated/PlanAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/PlansRelated/PlanAdderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/UserRelated/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/UserRelated/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Repos/PlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Repos/PlanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/PlanServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/PlanServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/ThemeServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/ThemeServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ServingWebContentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrganizerProject/ServingWebContentApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/ClassPathTldsLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/ClassPathTldsLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/FreemarkerTagLibsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/FreemarkerTagLibsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/MVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MVCConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Configs/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/MailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ControllerTools/ThemesAndPlansGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/GreetingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/GreetingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/PlansRelated/PlanAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/PlansRelated/PlanDeletionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanDeletionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/PlansRelated/PlanEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/TasksListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/TasksListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/ThemesRelated/ThemeAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeAdderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/ThemesRelated/ThemeDeletionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeDeletionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/ThemesRelated/ThemeEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/UserRelated/ActivationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/ActivationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/UserRelated/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Controllers/UserRelated/RestorePasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RestorePasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Entities/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Entities/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Entities/Theme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Theme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Repos/PlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/PlanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Repos/ThemeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/ThemeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Repos/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/PlanServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/PlanDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/ThemeServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/ThemeDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/Implementations/UserServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/UserDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/PlanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/PlanDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/ThemeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/ThemeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrganizerProject/ServingWebContentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/ServingWebContentApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheets/input.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Exceptions/nonExistingEmailExceptions.ftlh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activation.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/activation.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputValidator.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputValidator.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/logHelper.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/logHelper.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/planList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/planList.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/themeList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/themeList.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/ControllerErrors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/ThemesAndPlansGetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/ThemesAndPlansGetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/PlansRelated/PlanAdderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/PlansRelated/PlanAdderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/UserRelated/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/UserRelated/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Repos/PlanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Repos/PlanRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/PlanServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/PlanServiceImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/ThemeServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/ThemeServiceImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ServingWebContentApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OrganizerProject/ServingWebContentApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activation.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/activation.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputValidator.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputValidator.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/logHelper.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/logHelper.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/planList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/planList.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/themeList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/themeList.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addPlan.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addPlan.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addTheme.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addTheme.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/changingPassword.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/changingPassword.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputPlan.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/Validation/inputPlan.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputSingleElement.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/Validation/inputSingleElement.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputTheme.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/Validation/inputTheme.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputUserDetails.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/Validation/inputUserDetails.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/Validation/inputValidator.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/Validation/inputValidator.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/basic.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/basic.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/logHelper.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/logHelper.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/navbar.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/navbar.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/planList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/planList.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/themeList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/component/themeList.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editPlan.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editPlan.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editTheme.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editTheme.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greetings.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/greetings.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/restorePassword.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/restorePassword.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/ClassPathTldsLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/FreemarkerTagLibsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/MVCConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/MailConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Configs/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/MailSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ControllerTools/ThemesAndPlansGetter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/GreetingsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/PlansRelated/PlanAdderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/PlansRelated/PlanDeletionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/PlansRelated/PlanEditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/TasksListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/ThemesRelated/ThemeAdderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/ThemesRelated/ThemeDeletionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/ThemesRelated/ThemeEditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/UserRelated/ActivationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/UserRelated/RegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Controllers/UserRelated/RestorePasswordController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Entities/Plan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Entities/Roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Entities/Theme.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Repos/PlanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Repos/ThemeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Repos/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/PlanServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/ThemeServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/Implementations/UserServiceImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/PlanService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/ThemeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/Services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OrganizerProject/ServingWebContentApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stylesheets/input.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Exceptions/nonExistingEmailExceptions.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/activation.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addPlan.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addTheme.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/changingPassword.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputPlan.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputSingleElement.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputTheme.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputUserDetails.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/Validation/inputValidator.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/basic.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/logHelper.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/navbar.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/planList.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/themeList.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/editPlan.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/editTheme.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/greetings.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registration.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/restorePassword.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tasks.ftlh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,14 +200,27 @@
       <recent name="templates.components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mi\IdeaProjects\scheduler\src\main\resources\com.anton.organizerProject" />
       <recent name="C:\Users\Mi\IdeaProjects\scheduler\src\main\resources\templates\components\Validation" />
       <recent name="C:\Users\Mi\IdeaProjects\scheduler\src\main\resources\templates" />
       <recent name="C:\Users\Mi\IdeaProjects\scheduler\src\main\resources" />
       <recent name="C:\Users\Mi\IdeaProjects\scheduler\src\main\java\templates\components" />
-      <recent name="C:\Users\Mi\IdeaProjects\organizer\scheduler\src\main\java\OrganizerProject" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ServingWebContentApplication (1)">
+    <configuration name="ServingWebContentApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="scheduler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.anton.organizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.anton.organizer.ServingWebContentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServingWebContentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="scheduler" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="OrganizerProject.ServingWebContentApplication" />
@@ -133,6 +228,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ServingWebContentApplication (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -184,7 +284,20 @@
       <workItem from="1589834582452" duration="1094000" />
       <workItem from="1589881458112" duration="145000" />
       <workItem from="1589912839368" duration="2711000" />
-      <workItem from="1589964613260" duration="9511000" />
+      <workItem from="1589964613260" duration="9912000" />
+      <workItem from="1590054515252" duration="28000" />
+      <workItem from="1590058639135" duration="811000" />
+      <workItem from="1590097538846" duration="91000" />
+      <workItem from="1590697765625" duration="169000" />
+      <workItem from="1590761022394" duration="124000" />
+      <workItem from="1590763072246" duration="702000" />
+      <workItem from="1592476341578" duration="868000" />
+      <workItem from="1592556304496" duration="345000" />
+      <workItem from="1592684673562" duration="1223000" />
+      <workItem from="1593784682228" duration="599000" />
+      <workItem from="1594032005533" duration="1342000" />
+      <workItem from="1594054702535" duration="16000" />
+      <workItem from="1594111096942" duration="1794000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deletion">
       <created>1589201101595</created>
@@ -274,10 +387,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="294" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.824@0.0.1536.824" timestamp="1586250501257" />
-    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587290078739">
+    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594111299435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1587290078739" />
+    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1594111299435" />
     <state x="883" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588508345997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -290,42 +403,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="294" y="79" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1589195264435" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588601655865">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1594054717666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588601655865" />
-    <state width="746" height="180" key="GridCell.Tab.0.bottom" timestamp="1590007659696">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594054717666" />
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom" timestamp="1594112888144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.0.center" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594112888144" />
+    <state width="1493" height="180" key="GridCell.Tab.0.center" timestamp="1594112888144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.0.left" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594112888144" />
+    <state width="1493" height="180" key="GridCell.Tab.0.left" timestamp="1594112888144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.0.right" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594112888144" />
+    <state width="1493" height="180" key="GridCell.Tab.0.right" timestamp="1594112888144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.1.bottom" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594112888144" />
+    <state width="1493" height="180" key="GridCell.Tab.1.bottom" timestamp="1594112888145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.1.center" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594112888145" />
+    <state width="1493" height="180" key="GridCell.Tab.1.center" timestamp="1594112888145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.1.left" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594112888145" />
+    <state width="1493" height="180" key="GridCell.Tab.1.left" timestamp="1594112888144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
-    <state width="746" height="180" key="GridCell.Tab.1.right" timestamp="1590007659696">
+    <state width="1493" height="180" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594112888144" />
+    <state width="1493" height="180" key="GridCell.Tab.1.right" timestamp="1594112888145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="180" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590007659696" />
+    <state width="1493" height="180" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594112888145" />
     <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1586458844253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -346,18 +459,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1586971714277" />
-    <state x="299" y="68" key="Maven.ArtifactSearchDialog" timestamp="1585339346815">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="299" y="68" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1585339346815" />
     <state x="376" y="25" key="SettingsEditor" timestamp="1589026211147">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="376" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589026211147" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1589964623838">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1594054709651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589964623838" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1594054709651" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589201610821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -370,10 +479,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="179" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1586617481309" />
-    <state x="209" y="34" key="new project wizard" timestamp="1589709711758">
+    <state x="209" y="34" key="new project wizard" timestamp="1590054541874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="209" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1589709711758" />
+    <state x="209" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1590054541874" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1590005575773">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,7 +1,7 @@
-<#import "components/basic.ftlh" as base>
-<#import "components/navbar.ftlh" as navbar>
-<#import "components/planList.ftlh" as planList>
-<#import  "components/themeList.ftlh" as themeList>
+<#import "component/basic.ftlh" as base>
+<#import "component/navbar.ftlh" as navbar>
+<#import "component/planList.ftlh" as planList>
+<#import  "component/themeList.ftlh" as themeList>
 
 <@base.page>
     <#if currentTheme??>

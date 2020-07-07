@@ -1,5 +1,5 @@
-<#import "components/basic.ftlh" as base>
-<#import "components/logHelper.ftlh" as log>
+<#import "component/basic.ftlh" as base>
+<#import "component/logHelper.ftlh" as log>
 
 <@base.page>
     <@log.loginsample "/login" false />

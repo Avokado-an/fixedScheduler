@@ -1,5 +1,5 @@
-<#import "components/basic.ftlh" as base>
-<#import  "components/Validation/inputSingleElement.ftlh" as validate>
+<#import "component/basic.ftlh" as base>
+<#import  "component/Validation/inputSingleElement.ftlh" as validate>
 
 <@base.page>
     <div class="container">
