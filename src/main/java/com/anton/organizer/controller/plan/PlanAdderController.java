@@ -1,11 +1,9 @@
 package com.anton.organizer.controller.plan;
 
-import com.anton.organizer.dao.implementation.planDaoImplementation;
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
-import com.anton.organizer.entity.Plan;
 import com.anton.organizer.entity.Theme;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.PlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -14,33 +12,22 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Controller
 @RequestMapping
 public class PlanAdderController {
-    private ThemesAndPlansService themesAndPlansService;
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private ThemeDaoImplementation themeDaoImplementation;
+    private PlansService plansService;
 
     @Autowired
-    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeDaoImplementation = themeDaoImplementation;
-    }
-
-    private planDaoImplementation planDaoImplementation;
-
-    @Autowired
-    public void setPlanServiceImplementation(planDaoImplementation planDaoImplementation) {
-        this.planDaoImplementation = planDaoImplementation;
+    public void setPlansService(PlansService plansService) {
+        this.plansService = plansService;
     }
 
     @GetMapping("/tasks/addPlan")
@@ -48,7 +35,7 @@ public class PlanAdderController {
             @AuthenticationPrincipal User user,
             Model model
     ) {
-        inputModelData(user, model, null);
+        themesAndPlansModelingService.inputModelMinDate(user, model, null);
         return "addPlan";
     }
 
@@ -60,9 +47,9 @@ public class PlanAdderController {
             @RequestParam(name = "deadlineTime") String timeString,
             Model model
     ) throws ParseException {
-        addPlanComponent(user, description, dateString, timeString, null);
+        plansService.addPlanComponent(user, description, dateString, timeString, null);
 
-        inputModelData(user, model, null);
+        themesAndPlansModelingService.inputModelMinDate(user, model, null);
         return "redirect:/tasks";
     }
 
@@ -72,7 +59,7 @@ public class PlanAdderController {
             Model model,
             @PathVariable String themeId
     ) {
-        inputModelData(user, model, themeDaoImplementation.getById(Integer.parseInt(themeId)));
+        themesAndPlansModelingService.inputModelMinDate(user, model, plansService.findTheme(themeId));
         return "addPlan";
     }
 
@@ -85,35 +72,10 @@ public class PlanAdderController {
             Model model,
             @PathVariable String themeId
     ) throws ParseException {
-        Theme theme = themeDaoImplementation.getById(Integer.parseInt(themeId));
-        addPlanComponent(user, description, dateString, timeString, theme);
+        Theme theme = plansService.findTheme(themeId);
+        plansService.addPlanComponent(user, description, dateString, timeString, theme);
 
-        inputModelData(user, model, theme);
+        themesAndPlansModelingService.inputModelMinDate(user, model, theme);
         return new ModelAndView("redirect:/tasks/" + themeId);
-    }
-
-
-    private Plan createPlan(User user, String description, String timeString, String dateString) throws ParseException {
-        Date time = new SimpleDateFormat("kk:mm").parse(timeString);
-        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
-
-        return new Plan(description, time, date, user);
-    }
-
-    private void addPlanComponent(
-            User user, String description, String dateString, String timeString, Theme theme) throws ParseException {
-        Plan plan = createPlan(user, description, timeString, dateString);
-
-        if (theme != null)
-            theme.addPlan(plan);
-        plan.setTheme(theme);
-        user.addPlan(plan);
-
-        planDaoImplementation.save(plan);
-    }
-
-    private void inputModelData(User user, Model model, Theme theme) {
-        themesAndPlansService.findPlansAndThemes(user, model, theme);
-        model.addAttribute("minDate", DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
     }
 }

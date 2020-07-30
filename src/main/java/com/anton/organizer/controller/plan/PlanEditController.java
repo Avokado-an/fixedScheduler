@@ -1,10 +1,8 @@
 package com.anton.organizer.controller.plan;
 
-import com.anton.organizer.dao.implementation.planDaoImplementation;
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
-import com.anton.organizer.entity.Plan;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.PlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -14,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.transaction.Transactional;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -26,25 +23,18 @@ public class PlanEditController {
     private static final String MIN_DATE = "minDate";
     private static final String PLAN = "plan";
 
-    private planDaoImplementation planDaoImplementation;
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
-    public void setPlanDaoImplementation(planDaoImplementation planDaoImplementation) {
-        this.planDaoImplementation = planDaoImplementation;
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private ThemesAndPlansService themesAndPlansService;
+    private PlansService plansService;
 
     @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
-    }
-
-    private ThemeDaoImplementation themeDaoImplementation;
-
-    @Autowired
-    public void setPlanDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeDaoImplementation = themeDaoImplementation;
+    public void setPlansService(PlansService plansService) {
+        this.plansService = plansService;
     }
 
     @GetMapping("/editPlan/{planId}")
@@ -53,8 +43,8 @@ public class PlanEditController {
             Model model,
             @PathVariable String planId
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, null);
-        model.addAttribute(PLAN, findPlan(planId));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
+        model.addAttribute(PLAN, plansService.findPlan(planId));
         model.addAttribute(MIN_DATE, DateTimeFormatter.ofPattern(DATE_FORMAT).format(LocalDateTime.now()));
         return "editPlan";
     }
@@ -69,10 +59,10 @@ public class PlanEditController {
             Model model,
             @PathVariable String planId
     ) throws ParseException {
-        editPlan(description, timeString, dateString, planId);
-        user.editPlan(Integer.parseInt(planId), findPlan(planId));
+        plansService.editPlan(description, timeString, dateString, planId);
+        user.editPlan(Integer.parseInt(planId), plansService.findPlan(planId));
 
-        themesAndPlansService.findPlansAndThemes(user, model, null);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
         model.addAttribute(MIN_DATE, DateTimeFormatter.ofPattern(DATE_FORMAT).format(LocalDateTime.now()));
 
         return "redirect:/tasks";
@@ -85,8 +75,9 @@ public class PlanEditController {
             @PathVariable String themeId,
             @PathVariable String planId
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(themeId)));
-        model.addAttribute(PLAN, findPlan(planId));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, plansService.findTheme(themeId));
+
+        model.addAttribute(PLAN, plansService.findPlan(planId));
         model.addAttribute(MIN_DATE, DateTimeFormatter.ofPattern(DATE_FORMAT).format(LocalDateTime.now()));
         return "editPlan";
     }
@@ -102,24 +93,11 @@ public class PlanEditController {
             @PathVariable String themeId,
             @PathVariable String planId
     ) throws ParseException {
-        editPlan(description, timeString, dateString, planId);
+        plansService.editPlan(description, timeString, dateString, planId);
 
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(themeId)));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, plansService.findTheme(themeId));
         model.addAttribute(MIN_DATE, DateTimeFormatter.ofPattern(DATE_FORMAT).format(LocalDateTime.now()));
 
         return new ModelAndView("redirect:/tasks/" + themeId);
-    }
-
-    private void editPlan(String description, String timeString, String dateString, String planId) throws ParseException {
-        Plan plan = findPlan(planId);
-        plan.setDescription(description);
-        plan.setTime(new SimpleDateFormat(TIME_FORMAT).parse(timeString));
-        plan.setDate(new SimpleDateFormat(DATE_FORMAT).parse(dateString));
-
-        planDaoImplementation.save(plan);
-    }
-
-    private Plan findPlan(String id) {
-        return planDaoImplementation.getById(Integer.parseInt(id));
     }
 }

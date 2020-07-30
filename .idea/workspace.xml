@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce1f4ef-af45-4252-bc6f-f8e9e9357f9a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/PlansService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18682ce1e1e1d67ac199f9c502edf5ec12a4002c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4c5d3d08bc5ec51dabab76c94e9c5a33c5d86915" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83c924688744a07e3f00f5835bcdd833221e74f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a78f31dce440b61a32a50ff13c1bf090fb97c13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/b/8bb2dba2ae15b96e8337760299653a4d3018cf18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2388a1933450ccebf5aa219b83b230812594620" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae3704d7876471bfc008fd4348e6e36c6b9f38e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/bac784a172d3b1a76794ed8268ff480286a77233" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d91aff271ff078d7fcf750020d5cf11a1a1f0704" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef2e4681a8ae374c2cf1b61bee12c501b27584f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f08b9658071c802edbbe2a78080f77bc2dd19a7e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f67133e9b3dfe44019928f8830b6a8ebf298a52b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/ServingWebContentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/ServingWebContentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/FreemarkerTagLibsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/FreemarkerTagLibsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MVCConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MailConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/TasksListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/TasksListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanDeletionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanDeletionController.java" afterDir="false" />
@@ -18,40 +30,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/ActivationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/ActivationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RestorePasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RestorePasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/PlanDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/PlanDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/ThemeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/ThemeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/PlanDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/planDaoImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/ThemeDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/dao/implementation/ThemeDaoImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Theme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Theme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/ThemeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/ThemeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/MailSenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/ServingWebContentApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/ServingWebContentApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/config/MVCConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/config/MVCConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/config/MailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/config/MailConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/TasksListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/TasksListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/plan/PlanAdderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/plan/PlanAdderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/plan/PlanDeletionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/plan/PlanDeletionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/plan/PlanEditController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/plan/PlanEditController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/theme/ThemeAdderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/theme/ThemeAdderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/theme/ThemeDeletionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/theme/ThemeDeletionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/theme/ThemeEditController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/theme/ThemeEditController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/user/ActivationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/user/ActivationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/user/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/user/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/user/RestorePasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/controller/user/RestorePasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/dao/implementation/PlanDaoImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/dao/implementation/PlanDaoImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/entity/Theme.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/entity/Theme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/organizer/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/service/MailSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/organizer/service/ThemesAndPlansGetter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/tasks.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tasks.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansModelingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +107,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EPAM_MAIN/EPAM_DAY4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EPAM_MAIN/Test" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -239,7 +218,14 @@
       <workItem from="1593784682228" duration="599000" />
       <workItem from="1594032005533" duration="1342000" />
       <workItem from="1594054702535" duration="16000" />
-      <workItem from="1594111096942" duration="9621000" />
+      <workItem from="1594111096942" duration="10224000" />
+      <workItem from="1594204104816" duration="2653000" />
+      <workItem from="1594369543132" duration="8915000" />
+      <workItem from="1595408198080" duration="10000" />
+      <workItem from="1595416134395" duration="613000" />
+      <workItem from="1595422979266" duration="1793000" />
+      <workItem from="1595509525566" duration="185000" />
+      <workItem from="1596009272639" duration="4324000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deletion">
       <created>1589201101595</created>
@@ -305,34 +291,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="#Assign_Data_Sources/0.0.1536.824@0.0.1536.824" timestamp="1587474904512" />
-    <state x="361" y="72" key="#Inspections" timestamp="1586617931606">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="72" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1586617931606" />
-    <state x="361" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586971754112">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586971754112" />
     <state x="512" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588508284552">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1588508284552" />
-    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1589027125846">
+    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1594375601075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589027125846" />
-    <state x="430" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586250499289">
+    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594375601075" />
+    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594369963402">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="430" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1586250499289" />
-    <state x="566" y="294" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1586250501257">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="566" y="294" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.824@0.0.1536.824" timestamp="1586250501257" />
-    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594118799135">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1594118799135" />
+    <state x="421" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1594369963402" />
     <state x="883" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588508345997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -345,82 +315,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="294" y="79" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1589195264435" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1594122452740">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1596017296874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594122452740" />
-    <state width="1493" height="180" key="GridCell.Tab.0.bottom" timestamp="1594122843359">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596017296874" />
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="180" key="GridCell.Tab.0.center" timestamp="1594122843359">
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
+    <state width="1493" height="180" key="GridCell.Tab.0.center" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="180" key="GridCell.Tab.0.left" timestamp="1594122843359">
+    <state width="1493" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
+    <state width="1493" height="180" key="GridCell.Tab.0.left" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="180" key="GridCell.Tab.0.right" timestamp="1594122843359">
+    <state width="1493" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
+    <state width="1493" height="180" key="GridCell.Tab.0.right" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="180" key="GridCell.Tab.1.bottom" timestamp="1594122843360">
+    <state width="1493" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
+    <state width="1493" height="180" key="GridCell.Tab.1.bottom" timestamp="1594124705404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594122843360" />
-    <state width="1493" height="180" key="GridCell.Tab.1.center" timestamp="1594122843359">
+    <state width="1493" height="180" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594124705404" />
+    <state width="1493" height="180" key="GridCell.Tab.1.center" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="180" key="GridCell.Tab.1.left" timestamp="1594122843359">
+    <state width="1493" height="180" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
+    <state width="1493" height="180" key="GridCell.Tab.1.left" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="180" key="GridCell.Tab.1.right" timestamp="1594122843359">
+    <state width="1493" height="180" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
+    <state width="1493" height="180" key="GridCell.Tab.1.right" timestamp="1594124705403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="180" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594122843359" />
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1586458844253">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586458844253" />
-    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1586458844253">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1586458844253" />
-    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1586458844253">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1586458844253" />
-    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1586458844253">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1586458844253" />
-    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1586971714277">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1586971714277" />
+    <state width="1493" height="180" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594124705403" />
     <state x="376" y="25" key="SettingsEditor" timestamp="1589026211147">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="376" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589026211147" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1594054709651">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1594231052237">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1594054709651" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1594231052237" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589201610821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589201610821" />
-    <state x="330" y="149" width="876" height="601" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586970136289">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="330" y="149" width="876" height="601" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1586970136289" />
-    <state x="499" y="179" key="extract.method.dialog" timestamp="1586617481309">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="499" y="179" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1586617481309" />
     <state x="209" y="34" key="new project wizard" timestamp="1590054541874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -433,9 +375,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589027409770" />
-    <state x="413" y="96" key="spring file set editor" timestamp="1585556578045">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="413" y="96" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1585556578045" />
   </component>
 </project>

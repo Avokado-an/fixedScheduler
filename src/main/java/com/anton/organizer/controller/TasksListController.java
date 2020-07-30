@@ -1,9 +1,8 @@
 package com.anton.organizer.controller;
 
-import com.anton.organizer.dao.implementation.planDaoImplementation;
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
+import com.anton.organizer.service.ThemesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -15,25 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/tasks")
 public class TasksListController {
-    planDaoImplementation planDaoImplementation;
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
-    public void setPlanDaoImplementation(planDaoImplementation planDaoImplementation) {
-        this.planDaoImplementation = planDaoImplementation;
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private ThemesAndPlansService themesAndPlansService;
+    private ThemesService themesService;
 
     @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
-    }
-
-    private ThemeDaoImplementation themeDaoImplementation;
-
-    @Autowired
-    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeDaoImplementation = themeDaoImplementation;
+    public void setThemesService(ThemesService themesService) {
+        this.themesService = themesService;
     }
 
     @GetMapping()
@@ -41,7 +33,7 @@ public class TasksListController {
             @AuthenticationPrincipal User user,
             Model model
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, null);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
         return "tasks";
     }
 
@@ -51,7 +43,7 @@ public class TasksListController {
             Model model,
             @PathVariable String themeId
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(themeId)));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, themesService.findTheme(themeId));
         return "tasks";
     }
 }

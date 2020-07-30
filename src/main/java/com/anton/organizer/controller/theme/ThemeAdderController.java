@@ -1,9 +1,9 @@
 package com.anton.organizer.controller.theme;
 
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
 import com.anton.organizer.entity.Theme;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
+import com.anton.organizer.service.ThemesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -14,18 +14,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping
 public class ThemeAdderController {
-    private ThemesAndPlansService themesAndPlansService;
-
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
     @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
+
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private ThemeDaoImplementation themeServiceImplementation;
+    private ThemesService themesService;
 
     @Autowired
-    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeServiceImplementation = themeDaoImplementation;
+    public void setThemesService(ThemesService themesService) {
+        this.themesService = themesService;
     }
 
     @GetMapping("/tasks/addTheme")
@@ -33,7 +33,7 @@ public class ThemeAdderController {
             @AuthenticationPrincipal User user,
             Model model
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, null);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
         return "addTheme";
     }
 
@@ -43,10 +43,9 @@ public class ThemeAdderController {
             @RequestParam(name = "description") String description,
             Model model
     ) {
-        Theme theme = new Theme(description, user);
-        user.addPlanTheme(theme);
-        themeServiceImplementation.save(theme);
-        themesAndPlansService.findPlansAndThemes(user, model, null);
+        themesService.addTheme(user, description);
+
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
         return "redirect:/tasks";
     }
 
@@ -56,7 +55,7 @@ public class ThemeAdderController {
             Model model,
             @PathVariable String themeId
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, themeServiceImplementation.getById(Integer.parseInt(themeId)));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, themesService.findTheme(themeId));
         return "addTheme";
     }
 
@@ -67,12 +66,10 @@ public class ThemeAdderController {
             Model model,
             @PathVariable String themeId
     ) {
-        Theme theme = new Theme(description, user);
-        user.addPlanTheme(theme);
-        Theme parentTheme = themeServiceImplementation.getById(Integer.parseInt(themeId));
-        theme.setParentTheme(parentTheme);
-        themeServiceImplementation.save(theme);
-        themesAndPlansService.findPlansAndThemes(user, model, parentTheme);
+        Theme parentTheme = themesService.findTheme(themeId);
+        themesService.addTheme(user, description, parentTheme);
+
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, parentTheme);
         return new ModelAndView("redirect:/tasks/" + themeId);
     }
 }

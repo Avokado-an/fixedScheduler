@@ -1,9 +1,8 @@
 package com.anton.organizer.controller.theme;
 
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
-import com.anton.organizer.entity.Theme;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
+import com.anton.organizer.service.ThemesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -16,18 +15,18 @@ import javax.transaction.Transactional;
 @Controller
 @RequestMapping("/tasks")
 public class ThemeEditController {
-    private ThemeDaoImplementation themeDaoImplementation;
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
-    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeDaoImplementation = themeDaoImplementation;
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private ThemesAndPlansService themesAndPlansService;
+    private ThemesService themesService;
 
     @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
+    public void setThemesService(ThemesService themesService) {
+        this.themesService = themesService;
     }
 
     @GetMapping("/editTheme/{themeId}")
@@ -36,8 +35,8 @@ public class ThemeEditController {
             Model model,
             @PathVariable String themeId
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, null);
-        model.addAttribute("theme", findTheme(themeId));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
+        model.addAttribute("theme", themesService.findTheme(themeId));
         return "editTheme";
     }
 
@@ -49,11 +48,8 @@ public class ThemeEditController {
             Model model,
             @PathVariable String themeId
     ) {
-        editTheme(description, themeId);
-        user.editTheme(Integer.parseInt(themeId), findTheme(themeId));
-
-        themesAndPlansService.findPlansAndThemes(user, model, null);
-
+        themesService.editTheme(description, themeId, user);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
         return "redirect:/tasks";
     }
 
@@ -64,8 +60,8 @@ public class ThemeEditController {
             @PathVariable String themeId,
             @PathVariable String parentThemeId
     ) {
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(parentThemeId)));
-        model.addAttribute("theme", findTheme(themeId));
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, themesService.findTheme(parentThemeId));
+        model.addAttribute("theme", themesService.findTheme(themeId));
         return "editTheme";
     }
 
@@ -78,21 +74,8 @@ public class ThemeEditController {
             @PathVariable String themeId,
             @PathVariable String parentThemeId
     ) {
-        editTheme(description, themeId);
-
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(parentThemeId)));
-
+        themesService.editTheme(description, themeId);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, themesService.findTheme(parentThemeId));
         return new ModelAndView("redirect:/tasks/" + parentThemeId);
-    }
-
-    private void editTheme(String description, String themeId) {
-        Theme theme = findTheme(themeId);
-        theme.setName(description);
-
-        themeDaoImplementation.save(theme);
-    }
-
-    private Theme findTheme(String id) {
-        return themeDaoImplementation.getById(Integer.parseInt(id));
     }
 }

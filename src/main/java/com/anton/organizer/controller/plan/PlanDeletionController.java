@@ -1,9 +1,8 @@
 package com.anton.organizer.controller.plan;
 
-import com.anton.organizer.dao.implementation.planDaoImplementation;
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.PlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -18,25 +17,18 @@ import javax.transaction.Transactional;
 @Controller
 @RequestMapping("/tasks")
 public class PlanDeletionController {
-    private ThemeDaoImplementation themeDaoImplementation;
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
-    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeDaoImplementation = themeDaoImplementation;
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private planDaoImplementation planDaoImplementation;
+    private PlansService plansService;
 
     @Autowired
-    public void setPlanDaoImplementation(planDaoImplementation planDaoImplementation) {
-        this.planDaoImplementation = planDaoImplementation;
-    }
-
-    private ThemesAndPlansService themesAndPlansService;
-
-    @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
+    public void setPlansService(PlansService plansService) {
+        this.plansService = plansService;
     }
 
     @Transactional
@@ -46,11 +38,8 @@ public class PlanDeletionController {
             Model model,
             @PathVariable String planId
     ) {
-        int id = Integer.parseInt(planId);
-        planDaoImplementation.deletePlan(id);
-        user.deletePlanById(id);
-
-        themesAndPlansService.findPlansAndThemes(user, model, null);
+        plansService.deletePlan(planId, user);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
 
         return "redirect:/tasks";
     }
@@ -63,9 +52,8 @@ public class PlanDeletionController {
             @PathVariable String themeId,
             @PathVariable String planId
     ) {
-        planDaoImplementation.deletePlan(Integer.parseInt(planId));
-
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(themeId)));
+        plansService.deletePlan(planId);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, plansService.findTheme(themeId));
 
         return new ModelAndView("redirect:/tasks/" + themeId);
     }

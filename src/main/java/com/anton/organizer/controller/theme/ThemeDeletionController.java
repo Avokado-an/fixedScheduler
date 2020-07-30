@@ -1,8 +1,8 @@
 package com.anton.organizer.controller.theme;
 
-import com.anton.organizer.dao.implementation.ThemeDaoImplementation;
 import com.anton.organizer.entity.User;
-import com.anton.organizer.service.ThemesAndPlansService;
+import com.anton.organizer.service.ThemesAndPlansModelingService;
+import com.anton.organizer.service.ThemesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -17,18 +17,18 @@ import javax.transaction.Transactional;
 @Controller
 @RequestMapping("/tasks")
 public class ThemeDeletionController {
-    private ThemeDaoImplementation themeDaoImplementation;
+    private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
-    public void setThemeDaoImplementation(ThemeDaoImplementation themeDaoImplementation) {
-        this.themeDaoImplementation = themeDaoImplementation;
+    public void setThemesAndPlansModelingService(ThemesAndPlansModelingService themesAndPlansModelingService) {
+        this.themesAndPlansModelingService = themesAndPlansModelingService;
     }
 
-    private ThemesAndPlansService themesAndPlansService;
+    private ThemesService themesService;
 
     @Autowired
-    public void setThemesAndPlansService(ThemesAndPlansService themesAndPlansService) {
-        this.themesAndPlansService = themesAndPlansService;
+    public void setThemesService(ThemesService themesService) {
+        this.themesService = themesService;
     }
 
     @Transactional
@@ -38,10 +38,9 @@ public class ThemeDeletionController {
             @PathVariable String themeId,
             Model model
     ) {
-        themeDaoImplementation.deleteThemeById(Integer.parseInt(themeId));
-        user.deleteThemeById(Integer.parseInt(themeId));
+        themesService.deleteTheme(themeId, user);
 
-        themesAndPlansService.findPlansAndThemes(user, model, null);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, null);
 
         return "redirect:/tasks";
     }
@@ -54,8 +53,8 @@ public class ThemeDeletionController {
             Model model,
             @PathVariable String parentThemeId
     ) {
-        themeDaoImplementation.deleteThemeById(Integer.parseInt(themeId));
-        themesAndPlansService.findPlansAndThemes(user, model, themeDaoImplementation.getById(Integer.parseInt(parentThemeId)));
+        themesService.deleteTheme(themeId);
+        themesAndPlansModelingService.inputModelPlansAndThemes(user, model, themesService.findTheme(themeId));
 
         return new ModelAndView("redirect:/tasks/" + parentThemeId);
     }

@@ -1,6 +1,5 @@
 package com.anton.organizer.controller.user;
 
-import com.anton.organizer.dao.implementation.UserDaoImplementation;
 import com.anton.organizer.entity.User;
 import com.anton.organizer.service.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +15,6 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/restorePassword")
 public class RestorePasswordController {
-    private UserDaoImplementation userDaoImplementation;
-
-    @Autowired
-    public void setUserDaoImplementation(UserDaoImplementation userDaoImplementation) {
-        this.userDaoImplementation = userDaoImplementation;
-    }
-
     private PasswordEncoder passwordEncoder;
 
     @Autowired
