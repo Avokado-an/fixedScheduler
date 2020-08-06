@@ -19,7 +19,6 @@ public class ThemesAndPlansModelingService {
     public void inputModelPlansAndThemes(User user, Model model, Theme theme) {
         List<Plan> plans;
         List<Theme> themes;
-
         if (theme == null) {
             plans = new ArrayList<>(findStartingPlans(user.getPlans()));
             themes = new ArrayList<>(findStartingThemes(user.getThemes()));

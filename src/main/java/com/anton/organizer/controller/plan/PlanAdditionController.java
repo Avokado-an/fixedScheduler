@@ -15,7 +15,7 @@ import java.text.ParseException;
 
 @Controller
 @RequestMapping
-public class PlanAdderController {
+public class PlanAdditionController {
     private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired

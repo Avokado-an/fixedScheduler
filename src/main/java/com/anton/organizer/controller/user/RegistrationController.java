@@ -34,9 +34,4 @@ public class RegistrationController {
         String urlRedirectResponse = service.addUser(model, name, password, email);
         return new ModelAndView(urlRedirectResponse);
     }
-
-    @ExceptionHandler(javax.mail.SendFailedException.class)
-    public ModelAndView handleException(Exception ex) {
-        return new ModelAndView("redirect:/tasks/registration");
-    }
 }

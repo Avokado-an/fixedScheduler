@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping
-public class ThemeAdderController {
+public class ThemeAdditionController {
     private ThemesAndPlansModelingService themesAndPlansModelingService;
     @Autowired
 

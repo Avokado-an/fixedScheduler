@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 
 @Controller
 @RequestMapping("/tasks")
-public class PlanEditController {
+public class PlanEditingController {
     private static final String DATE_FORMAT = "yyyy-MM-dd";
     private static final String TIME_FORMAT = "kk:mm";
     private static final String MIN_DATE = "minDate";

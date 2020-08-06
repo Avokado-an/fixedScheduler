@@ -14,6 +14,7 @@ import java.util.UUID;
 @Component
 public class UserService {
     private static final String REGISTRATION = "registration";
+    private static final String MESSAGE = "message";
     UserDaoImplementation userDao;
 
     @Autowired
@@ -67,17 +68,45 @@ public class UserService {
                 userDao.save(newUser);
                 urlRedirectResponse = "redirect:/activation/" + name;
             } else {
-                model.addAttribute("message", "This username is taken, try another");
+                model.addAttribute(MESSAGE, "This username is taken, try another");
                 urlRedirectResponse = REGISTRATION;
             }
         } catch (Exception ex) {
-            model.addAttribute("message", "This mail is invalid, check it");
+            model.addAttribute(MESSAGE, "This mail is invalid, check it");
             urlRedirectResponse = REGISTRATION;
         }
         return urlRedirectResponse;
     }
 
-    private void setUserParameters() {
+    public void sendPasswordRestorationCode(String username) {
+        User user = userDao.loadUserByUsername(username);
+        String code = UUID.randomUUID().toString().substring(0, 4);
+        mailSenderService.send(user.getEmail(), "Restore password", "Your code to change password - " + code);
+        user.setActivationCode(code);
+    }
 
+    public String confirmRestorationCode(String username, String restorationCode, Model model) {
+        User user = userDao.loadUserByUsername(username);
+        String responseUrl;
+        if (restorationCode.equals(user.getActivationCode()))
+            responseUrl = "redirect:/restorePassword/changePassword/" + username;
+        else {
+            model.addAttribute(MESSAGE, "wrong code");
+            responseUrl = "redirect:/restorePassword/" + username;
+        }
+        return responseUrl;
+    }
+
+    public String confirmPasswordChange(String username, String newPassword, String newPasswordCopy, Model model) {
+        String responseUrl;
+        if (newPassword.equals(newPasswordCopy)) {
+            User user = userDao.loadUserByUsername(username);
+            user.setPassword(passwordEncoder.encode(newPassword));
+            responseUrl = "redirect:/login";
+        } else {
+            responseUrl = "redirect:/restorePassword/changePassword/" + username;
+        }
+        model.addAttribute(MESSAGE, "passwords differ from each other");
+        return responseUrl;
     }
 }

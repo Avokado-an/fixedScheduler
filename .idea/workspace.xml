@@ -2,35 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce1f4ef-af45-4252-bc6f-f8e9e9357f9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/PlansService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18682ce1e1e1d67ac199f9c502edf5ec12a4002c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4c5d3d08bc5ec51dabab76c94e9c5a33c5d86915" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83c924688744a07e3f00f5835bcdd833221e74f7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a78f31dce440b61a32a50ff13c1bf090fb97c13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/b/8bb2dba2ae15b96e8337760299653a4d3018cf18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2388a1933450ccebf5aa219b83b230812594620" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae3704d7876471bfc008fd4348e6e36c6b9f38e1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/bac784a172d3b1a76794ed8268ff480286a77233" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d91aff271ff078d7fcf750020d5cf11a1a1f0704" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef2e4681a8ae374c2cf1b61bee12c501b27584f8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f08b9658071c802edbbe2a78080f77bc2dd19a7e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f67133e9b3dfe44019928f8830b6a8ebf298a52b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/config/MVCConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/TasksListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/TasksListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanDeletionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanDeletionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanEditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeAdderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeDeletionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeDeletionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanAdditionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/plan/PlanEditingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeAdderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeAdditionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/theme/ThemeEditingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/ActivationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/ActivationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RestorePasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RestorePasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansModelingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/RestorePasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/controller/user/PasswordRestorationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/entity/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansModelingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/ThemesAndPlansModelingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/organizer/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/changingPassword.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/changingPassword.ftlh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +90,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EPAM_MAIN/Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -226,6 +209,7 @@
       <workItem from="1595422979266" duration="1793000" />
       <workItem from="1595509525566" duration="185000" />
       <workItem from="1596009272639" duration="4324000" />
+      <workItem from="1596706233563" duration="2627000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed deletion">
       <created>1589201101595</created>

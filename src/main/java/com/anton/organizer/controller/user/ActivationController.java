@@ -1,6 +1,5 @@
 package com.anton.organizer.controller.user;
 
-import com.anton.organizer.entity.User;
 import com.anton.organizer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

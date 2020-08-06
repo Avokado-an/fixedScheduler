@@ -11,7 +11,6 @@ import java.util.Date;
 @Entity
 @Table(name = "Plan")
 public class Plan implements Comparable<Plan> {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

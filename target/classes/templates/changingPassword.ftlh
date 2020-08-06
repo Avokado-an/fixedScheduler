@@ -3,6 +3,9 @@
 
 <@base.page>
     <div class="container">
+        <p>
+            ${message}
+        </p>
         <form method="post" enctype="multipart/form-data">
             <@validate.input "password", "", "text", "Provide valid password"/>
             <@validate.input "passwordChecker", "", "text", "Provide copy of password"/>

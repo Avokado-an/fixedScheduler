@@ -14,7 +14,7 @@ import javax.transaction.Transactional;
 
 @Controller
 @RequestMapping("/tasks")
-public class ThemeEditController {
+public class ThemeEditingController {
     private ThemesAndPlansModelingService themesAndPlansModelingService;
 
     @Autowired
