@@ -5,5 +5,5 @@ Information is saved using JPA + Hibernate, design - freemarker + bootstrap, use
 Next to fix/add:
 1) Edit homepage(add project description or sth else)
 2) Add error handling mechanisms for non existing page
-3) Put all logic from controllers into services
+3) Separate business logic into different modules
 4) Add redirection of non-validated users to email confirmation page
